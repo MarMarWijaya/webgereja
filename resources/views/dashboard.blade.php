@@ -8,7 +8,7 @@
 
 <body id="body-pd">
 
-    @include('sidebar.sidebar')
+    @include('sidebar.sidebardashboard')
 
     <div class="content">
         <div style="margin-top: 5%"></div>
