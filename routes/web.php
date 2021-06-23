@@ -33,6 +33,16 @@ Route::post('/administrasi/cetak', 'App\Http\Controllers\AdministrasiController@
 
 
 Route::get('/renungan', 'App\Http\Controllers\ManajemenRenunganController@index');
+Route::post('/renungan/tambah', 'App\Http\Controllers\ManajemenRenunganController@tambah');
+Route::get('/renungan/{id}', 'App\Http\Controllers\ManajemenRenunganController@getRenunganByID');
+Route::get('/renungan/hapus/{id}', 'App\Http\Controllers\ManajemenRenunganController@hapus');
+Route::get('/renungan/view/{id}', 'App\Http\Controllers\ManajemenRenunganController@viewEdit');
+Route::post('/renungan/edit', 'App\Http\Controllers\ManajemenRenunganController@edit');
 
 
 Route::get('/pengumuman', 'App\Http\Controllers\ManajemenPengumumanController@index');
+Route::post('/pengumuman/tambah', 'App\Http\Controllers\ManajemenPengumumanController@tambah');
+Route::get('/pengumuman/{id}', 'App\Http\Controllers\ManajemenPengumumanController@getPengumumanByID');
+Route::get('/pengumuman/hapus/{id}', 'App\Http\Controllers\ManajemenPengumumanController@hapus');
+Route::get('/pengumuman/view/{id}', 'App\Http\Controllers\ManajemenPengumumanController@viewEdit');
+Route::post('/pengumuman/edit', 'App\Http\Controllers\ManajemenPengumumanController@edit');
