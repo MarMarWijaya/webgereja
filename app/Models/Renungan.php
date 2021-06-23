@@ -9,5 +9,12 @@ class Renungan extends Model
 {
     use HasFactory;
     protected $table = 'renungan';
+    public $timestamps = false;
     protected $primaryKey = 'idRenungan';
+    protected $fillable = [
+        'judul',
+        'isi',
+        'lampiran',
+        'nij'
+    ];
 }
