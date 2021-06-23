@@ -9,38 +9,39 @@
 
 <div class="content">
     <div style="margin-top: 5%"></div>
-    <form>
+    <form method='POST' action='/administrasi/cetak'>
+    @csrf
         <div class="mb-3">
             <label for="nama" class="form-label">Nama</label>
-            <input type="text" class="form-control" id="nama">
+            <input type="text" class="form-control" id="nama" name='nama'>
         </div>
         <div class="mb-3">
             <label for="namaBaptis" class="form-label">Nama Baptis</label>
-            <input type="text" class="form-control" id="namaBaptis">
+            <input type="text" class="form-control" id="namaBaptis" name='namaBaptis'>
         </div>
         <div class="mb-3">
             <label for="tanggalBaptis" class="form-label">Tanggal Baptis</label>
-            <input type="date" class="form-control" id="tanggalBaptis">
+            <input type="date" class="form-control" id="tanggalBaptis" name='tanggalBaptis'>
         </div>
         <div class="mb-3">
             <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
-            <input type="date" class="form-control" id="tanggalLahir">
+            <input type="date" class="form-control" id="tanggalLahir" name='tanggalLahir'>
         </div>
         <div class="mb-3">
             <label for="ayah" class="form-label">Nama Ayah</label>
-            <input type="text" class="form-control" id="ayah">
+            <input type="text" class="form-control" id="ayah" name='ayah'>
         </div>
         <div class="mb-3">
             <label for="ibu" class="form-label">Nama Ibu</label>
-            <input type="text" class="form-control" id="ibu">
+            <input type="text" class="form-control" id="ibu" name='ibu'>
         </div>
         <div class="mb-3">
             <label for="pendeta" class="form-label">Nama Pendeta</label>
-            <input type="text" class="form-control" id="pendeta">
+            <input type="text" class="form-control" id="pendeta" name='pendeta'>
         </div>
         <div class="mb-3">
             <label for="mentor" class="form-label">Nama Mentor</label>
-            <input type="text" class="form-control" id="mentor">
+            <input type="text" class="form-control" id="mentor" name='mentor'>
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>

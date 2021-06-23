@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
 
 //Route::resource('jemaat', 'App\Http\Controllers\JemaatController');
@@ -24,6 +24,7 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 Route::get('/datajemaat', 'App\Http\Controllers\ManajemenJemaatController@index');
 
 Route::get('/administrasi', 'App\Http\Controllers\AdministrasiController@index');
+Route::post('/administrasi/cetak', 'App\Http\Controllers\AdministrasiController@cetak');
 
 
 Route::get('/renungan', 'App\Http\Controllers\ManajemenRenunganController@index');

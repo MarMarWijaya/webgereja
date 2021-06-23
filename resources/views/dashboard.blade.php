@@ -14,7 +14,7 @@
         <div class="column2">
             <div class="card">
                 <h3>Jumlah Jemaat</h3>
-                <h2>{{$jumlahJemaat}}</h2>
+                <h2>{{ $jumlahJemaat }}</h2>
             </div>
         </div>
 
