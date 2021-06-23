@@ -22,6 +22,11 @@ Route::get('/', function () {
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 
 Route::get('/datajemaat', 'App\Http\Controllers\ManajemenJemaatController@index');
+Route::get('/datajemaat/{nij}', 'App\Http\Controllers\ManajemenJemaatController@getDataByNIJ');
+Route::post('/datajemaat/tambah', 'App\Http\Controllers\ManajemenJemaatController@tambah');
+Route::get('/datajemaat/hapus/{nij}', 'App\Http\Controllers\ManajemenJemaatController@hapus');
+Route::get('/datajemaat/view/{nij}', 'App\Http\Controllers\ManajemenJemaatController@viewEdit');
+Route::post('/datajemaat/edit', 'App\Http\Controllers\ManajemenJemaatController@edit');
 
 Route::get('/administrasi', 'App\Http\Controllers\AdministrasiController@index');
 Route::post('/administrasi/cetak', 'App\Http\Controllers\AdministrasiController@cetak');
