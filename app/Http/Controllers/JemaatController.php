@@ -29,7 +29,7 @@ class JemaatController extends Controller
 
     public function login(Request $request) {
         $nij = $request->nij;
-        $password = $request->password;
+        $password = md5($request->password);
 
         $data = Jemaat::find($nij);
         if($data->password != $password){
