@@ -46,3 +46,9 @@ Route::get('/pengumuman/{id}', 'App\Http\Controllers\ManajemenPengumumanControll
 Route::get('/pengumuman/hapus/{id}', 'App\Http\Controllers\ManajemenPengumumanController@hapus');
 Route::get('/pengumuman/view/{id}', 'App\Http\Controllers\ManajemenPengumumanController@viewEdit');
 Route::post('/pengumuman/edit', 'App\Http\Controllers\ManajemenPengumumanController@edit');
+
+Route::get('/home', 'App\Http\Controllers\ManajemenHomeController@index');
+Route::post('/home/tambah', 'App\Http\Controllers\ManajemenHomeController@tambah');
+Route::get('/home/hapus/{id}', 'App\Http\Controllers\ManajemenHomeController@hapus');
+Route::get('/home/view/{id}', 'App\Http\Controllers\ManajemenHomeController@viewEdit');
+Route::post('/home/edit', 'App\Http\Controllers\ManajemenHomeController@edit');

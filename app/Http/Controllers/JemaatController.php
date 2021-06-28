@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Jemaat;
+use App\Models\Pengumuman;
+use App\Models\Renungan;
 
 class JemaatController extends Controller
 {
@@ -66,6 +68,26 @@ class JemaatController extends Controller
             'msg' => 'Registrasi berhasil',
         ];
         return $respon;
+    }
+
+    public function getAllPengumuman(){
+        $data = Pengumuman::all();
+        return response()->json($data, 200);
+    }
+
+    public function getPengumumanByID(Request $req){
+        $data = Pengumuman::find($req->id);
+        return response()->json($data, 200);
+    }
+
+    public function getAllRenungan(){
+        $data = Renungan::all();
+        return response()->json($data, 200);
+    }
+
+    public function getRenunganByID(Request $req){
+        $data = Renungan::find($req->id);
+        return response()->json($data, 200);
     }
 
     public function create()

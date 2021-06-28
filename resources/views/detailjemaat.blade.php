@@ -77,6 +77,11 @@
             <td>{{ $data['nama'] }}</td>
         </tr>
         <tr>
+            <td>KK</td>
+            <td>:</td>
+            <td>{{ $data['kk'] }}</td>
+        </tr>
+        <tr>
             <td>Gender</td>
             <td>:</td>
             <td>{{ $data['gender'] }}</td>
@@ -134,8 +139,8 @@
         <tr>
             <td>Home</td>
             <td>:</td>
-            @if(isset($data['idHome']))
-                <td>{{ $data['idHome'] }}</td>
+            @if(isset($home))
+                <td>{{ $home['nama_home'] }}</td>
             @endif
             @if(!isset($data['idHome']))
                 <td>Belum diketahui</td>

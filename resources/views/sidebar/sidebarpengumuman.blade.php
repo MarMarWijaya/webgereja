@@ -10,6 +10,7 @@
                 <a href="/administrasi" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Administrasi</span> </a>
                 <a href="/renungan" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Renungan</span> </a>
                 <a href="/pengumuman" class="nav_link active"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Pengumuman</span> </a>
+                <a href="/home" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Data Home</span> </a>
             </div>
         </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
     </nav>

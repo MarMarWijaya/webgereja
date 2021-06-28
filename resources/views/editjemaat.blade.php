@@ -78,6 +78,10 @@
                 <input type="text" class="form-control" id="nama" name='nama' required value="{{ $editData['nama'] }}">
             </div>
             <div class="mb-3">
+                <label for="kk" class="form-label">KK</label>
+                <input type="text" class="form-control" id="kk" name='kk' required value="{{ $editData['kk'] }}">
+            </div>
+            <div class="mb-3">
                 <label for="namaBaptis" class="form-label">Gender</label>
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01" name='gender'>
@@ -176,8 +180,24 @@
                 <label for="home" class="form-label">Home</label>
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01" name='home'>
-                        <option selected value="">Choose...</option>
-                        <option value="">Belum diketahui</option>
+                        @if($namaHome == "Belum diketahui")
+                            <option selected value="">Belum diketahui</option>
+                            @foreach($dataHome as $dH)
+                            <option value="{{ $dH->idHome }}">{{ $dH->idHome }} - {{ $dH->nama_home }}</option>
+                            @endforeach
+                        @endif
+
+                        @if($namaHome != "Belum diketahui")
+                            @foreach($dataHome as $dH)
+                                @if($editData['idHome'] == $dH->idHome)
+                                    <option selected value="{{ $dH->idHome }}">{{ $dH->idHome }} - {{ $dH->nama_home }}</option>
+                                @endif
+                                @if($editData['idHome'] != $dH->idHome)
+                                    <option value="{{ $dH->idHome }}">{{ $dH->idHome }} - {{ $dH->nama_home }}</option>
+                                @endif
+                            @endforeach
+                            <option value="">Belum diketahui</option>
+                        @endif
                     </select>
                 </div>
             </div>

@@ -23,6 +23,10 @@
                 <input type="text" class="form-control" id="nama" name='nama' required>
             </div>
             <div class="mb-3">
+                <label for="kk" class="form-label">KK</label>
+                <input type="text" class="form-control" id="kk" name='kk' required>
+            </div>
+            <div class="mb-3">
                 <label for="namaBaptis" class="form-label">Gender</label>
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01" name='gender'>
@@ -73,7 +77,6 @@
                 <label for="desa" class="form-label">Desa</label>
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01" name='desa'>
-                        <option selected>Choose...</option>
                         <option value="">Belum diketahui</option>
                     </select>
                 </div>
@@ -82,8 +85,10 @@
                 <label for="home" class="form-label">Home</label>
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01" name='home'>
-                        <option selected>Choose...</option>
                         <option value="">Belum diketahui</option>
+                        @foreach($dataHome as $dH)
+                            <option value="{{ $dH->idHome }}">{{ $dH->nama_home }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -91,7 +96,6 @@
                 <label for="mentor" class="form-label">Mentor</label>
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01" name='mentor'>
-                        <option selected>Choose...</option>
                         <option value="">Belum diketahui</option>
                     </select>
                 </div>
@@ -117,6 +121,7 @@
             <tr>
                 <td>NIJ</td>
                 <td>Nama</td>
+                <td>KK</td>
                 <td>HP</td>
                 <td>Ayah</td>
                 <td>Home</td>
@@ -129,6 +134,7 @@
                 <tr>
                     <td>{{ $d->nij }}</td>
                     <td>{{ $d->nama }}</td>
+                    <td>{{ $d->kk }}</td>
                     <td>{{ $d->hp }}</td>
                     <td>{{ $d->nama_ayah }}</td>
                     <td>{{ $d->idHome }}</td>

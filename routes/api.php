@@ -22,3 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('login', 'App\Http\Controllers\JemaatController@login');
 Route::post('registrasi', 'App\Http\Controllers\JemaatController@registrasi');
+Route::get('getAllPengumuman', 'App\Http\Controllers\JemaatController@getAllPengumuman');
+Route::post('getPengumumanByID', 'App\Http\Controllers\JemaatController@getPengumumanByID');
+Route::get('getAllRenungan', 'App\Http\Controllers\JemaatController@getAllRenungan');
+Route::post('getRenunganByID', 'App\Http\Controllers\JemaatController@getRenunganByID');

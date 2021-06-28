@@ -17,6 +17,7 @@ class CreateJemaatsTable extends Migration
             $table->increments('nij');
             $table->text('password');
             $table->text('nama');
+            $table->text('kk');
             $table->string('gender');
             $table->text('alamat');
             $table->text('ttl');
