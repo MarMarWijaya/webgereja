@@ -129,10 +129,10 @@
         <tr>
             <td>Desa</td>
             <td>:</td>
-            @if(isset($data['idDesa']))
-                <td>{{ $data['idDesa'] }}</td>
+            @if(isset($desa))
+                <td>{{ $desa['Nama_Desa'] }}</td>
             @endif
-            @if(!isset($data['idDesa']))
+            @if(!isset($desa))
                 <td>Belum diketahui</td>
             @endif
         </tr>
@@ -149,10 +149,10 @@
         <tr>
             <td>Mentor</td>
             <td>:</td>
-            @if(isset($data['idMentor']))
-                <td>{{ $data['idMentor'] }}</td>
+            @if(isset($mentor))
+                <td>{{ $mentor['nama'] }}</td>
             @endif
-            @if(!isset($data['idMentor']))
+            @if(!isset($mentor))
                 <td>Belum diketahui</td>
             @endif
         </tr>

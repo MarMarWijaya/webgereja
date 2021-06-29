@@ -78,6 +78,9 @@
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01" name='desa'>
                         <option value="">Belum diketahui</option>
+                        @foreach($dataDesa as $dD)
+                            <option value="{{ $dD->idDesa }}">{{ $dD->Nama_Desa }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -97,6 +100,9 @@
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01" name='mentor'>
                         <option value="">Belum diketahui</option>
+                        @foreach($data as $d)
+                            <option value="{{ $d->nij }}">{{ $d->nij }} - {{ $d->nama }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>

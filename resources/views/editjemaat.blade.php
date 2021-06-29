@@ -171,8 +171,24 @@
                 <label for="desa" class="form-label">Desa</label>
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01" name='desa'>
-                        <option selected value="">Choose...</option>
-                        <option value="">Belum diketahui</option>
+                        @if($namaDesa == "Belum diketahui")
+                            <option selected value="">Belum diketahui</option>
+                            @foreach($dataDesa as $dD)
+                            <option value="{{ $dD->idDesa }}">{{ $dD->idDesa }} - {{ $dD->Nama_Desa }}</option>
+                            @endforeach
+                        @endif
+
+                        @if($namaDesa != "Belum diketahui")
+                            @foreach($dataDesa as $dD)
+                                @if($editData['idDesa'] == $dD->idDesa)
+                                    <option selected value="{{ $dD->idDesa }}">{{ $dD->idDesa }} - {{ $dD->Nama_Desa }}</option>
+                                @endif
+                                @if($editData['idDesa'] != $dD->idDesa)
+                                    <option value="{{ $dD->idDesa }}">{{ $dD->idDesa }} - {{ $dD->Nama_Desa }}</option>
+                                @endif
+                            @endforeach
+                            <option value="">Belum diketahui</option>
+                        @endif
                     </select>
                 </div>
             </div>
@@ -205,8 +221,24 @@
                 <label for="mentor" class="form-label">Mentor</label>
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect01" name='mentor'>
-                        <option selected value="">Choose...</option>
-                        <option value="">Belum diketahui</option>
+                        @if($namaMentor == "Belum diketahui")
+                            <option selected value="">Belum diketahui</option>
+                            @foreach($dataMentor as $dM)
+                            <option value="{{ $dM->nij }}">{{ $dM->nij }} - {{ $dM->nama }}</option>
+                            @endforeach
+                        @endif
+
+                        @if($namaMentor != "Belum diketahui")
+                            @foreach($dataMentor as $dM)
+                                @if($editData['idMentor'] == $dM->nij)
+                                    <option selected value="{{ $dM->nij }}">{{ $dM->nij }} - {{ $dM->nama }}</option>
+                                @endif
+                                @if($editData['idMentor'] != $dM->nij)
+                                    <option value="{{ $dM->nij }}">{{ $dM->nij }} - {{ $dM->nama }}</option>
+                                @endif
+                            @endforeach
+                            <option value="">Belum diketahui</option>
+                        @endif
                     </select>
                 </div>
             </div>

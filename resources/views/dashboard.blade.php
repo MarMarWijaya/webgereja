@@ -19,7 +19,6 @@
                     <h2>{{ $jumlahJemaat }}</h2>
                 </div>
             </div>
-
             <div class="column2">
                 <div class="card">
                     <h3>Jumlah Home</h3>

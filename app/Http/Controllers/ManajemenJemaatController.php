@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Jemaat;
 use App\Models\Home;
+use App\Models\Desa;
 use Illuminate\Support\Facades\DB;
 
 class ManajemenJemaatController extends Controller
@@ -12,7 +13,8 @@ class ManajemenJemaatController extends Controller
     public function index(){
         $data = Jemaat::all();
         $dataHome = Home::all();
-        return view('manajemenjemaat', ['data' => $data, 'dataHome' => $dataHome]);
+        $dataDesa = Desa::all();
+        return view('manajemenjemaat', ['data' => $data, 'dataHome' => $dataHome, 'dataDesa' => $dataDesa]);
     }
 
     public function tambah(Request $req){
@@ -38,8 +40,12 @@ class ManajemenJemaatController extends Controller
     public function getDataByNIJ($nij){
         $data = Jemaat::find($nij);
         $id = $data['idHome'];
+        $idDesa = $data['idDesa'];
+        $idMentor = $data['idMentor'];
         $dataHome = Home::find($id);
-        return view('detailjemaat', ['data' => $data, 'home' => $dataHome]);
+        $dataDesa = Desa::find($idDesa);
+        $dataMentor = Jemaat::find($idMentor);
+        return view('detailjemaat', ['data' => $data, 'home' => $dataHome, 'desa' => $dataDesa, 'mentor' => $dataMentor]);
     }
 
     public function hapus($nij){
@@ -51,13 +57,39 @@ class ManajemenJemaatController extends Controller
     public function viewEdit($nij){
         $data = Jemaat::find($nij);
         $id = $data['idHome'];
+        $idDesa = $data['idDesa'];
+        $idMentor = $data['idMentor'];
         $dataHome = Home::all();
+        $dataDesa = Desa::all();
+        $dataMentor = Jemaat::all();
         if($id != null){
             $namaHome = Home::find($id)->get('nama_home');
         }else{
             $namaHome = "Belum diketahui";
         }
-        return view('editjemaat', ['editData' => $data, 'dataHome' => $dataHome, 'namaHome' => $namaHome]);
+
+        if($idDesa != null){
+            $namaDesa = Desa::find($idDesa)->get('Nama_Desa');
+        }else{
+            $namaDesa = "Belum diketahui";
+        }
+
+        if($idMentor != null){
+            $namaMentor = Jemaat::find($idMentor)->get('nama');
+        }else{
+            $namaMentor = "Belum diketahui";
+        }
+        
+        return view('editjemaat', 
+        [
+            'editData' => $data, 
+            'dataHome' => $dataHome, 
+            'dataDesa' => $dataDesa, 
+            'dataMentor' => $dataMentor,
+            'namaHome' => $namaHome, 
+            'namaDesa' => $namaDesa,
+            'namaMentor' => $namaMentor
+        ]);
     }
 
     public function edit(Request $req){
