@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Jemaat;
 use App\Models\Home;
+use Illuminate\Support\Facades\DB;
 
 class ManajemenJemaatController extends Controller
 {
@@ -78,5 +79,11 @@ class ManajemenJemaatController extends Controller
         $data->save();
 
         return redirect('/datajemaat');
+    }
+
+    public function getDataByKK($kk){
+        $data = Jemaat::where('kk', '=', $kk)->get();
+        //$data = DB::table('jemaat')->where('kk', '=', $kk)->get();
+        return view('jemaatbykk', ['kk' => $data, 'noKK' => $kk]);
     }
 }

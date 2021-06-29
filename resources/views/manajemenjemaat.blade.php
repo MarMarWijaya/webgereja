@@ -134,7 +134,7 @@
                 <tr>
                     <td>{{ $d->nij }}</td>
                     <td>{{ $d->nama }}</td>
-                    <td>{{ $d->kk }}</td>
+                    <td><a href='/datajemaat/kk/{{ $d->kk }}'>{{ $d->kk }}</a></td>
                     <td>{{ $d->hp }}</td>
                     <td>{{ $d->nama_ayah }}</td>
                     <td>{{ $d->idHome }}</td>

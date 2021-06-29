@@ -22,8 +22,15 @@
 
             <div class="column2">
                 <div class="card">
+                    <h3>Jumlah Home</h3>
+                    <h2>{{ $jumlahHome }}</h2>
+                </div>
+            </div>
+
+            <div class="column2">
+                <div class="card">
                     <h3>Tanggal</h3>
-                    <p><?php echo date('l') . ", " . date('d/m/Y') ?></p>
+                    <p><?php echo date('l') . ", " . date('d M Y') ?></p>
                 </div>
             </div>
         </div>

@@ -27,6 +27,8 @@ Route::post('/datajemaat/tambah', 'App\Http\Controllers\ManajemenJemaatControlle
 Route::get('/datajemaat/hapus/{nij}', 'App\Http\Controllers\ManajemenJemaatController@hapus');
 Route::get('/datajemaat/view/{nij}', 'App\Http\Controllers\ManajemenJemaatController@viewEdit');
 Route::post('/datajemaat/edit', 'App\Http\Controllers\ManajemenJemaatController@edit');
+Route::get('/datajemaat/kk/{kk}', 'App\Http\Controllers\ManajemenJemaatController@getDataByKK');
+
 
 Route::get('/administrasi', 'App\Http\Controllers\AdministrasiController@index');
 Route::post('/administrasi/cetak', 'App\Http\Controllers\AdministrasiController@cetak');

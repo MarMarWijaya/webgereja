@@ -20,6 +20,7 @@ class DashboardController extends Controller
     public function index()
     {
         $jumlahJemaat = DB::table('jemaat')->count();
-        return view('dashboard', ['jumlahJemaat' => $jumlahJemaat]);
+        $jumlahHome = DB::table('home')->count();
+        return view('dashboard', ['jumlahJemaat' => $jumlahJemaat, 'jumlahHome' => $jumlahHome]);
     }
 }
