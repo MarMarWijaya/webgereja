@@ -49,6 +49,7 @@ class JemaatController extends Controller
         $jemaat = new Jemaat([
             'password' => $pass,
             'nama' => $request->nama,
+            'kk' => $request->kk,
             'gender' => $request->gender,
             'alamat' => $request->alamat,
             'ttl' => $request->ttl,

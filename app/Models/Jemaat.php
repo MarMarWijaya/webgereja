@@ -13,6 +13,7 @@ class Jemaat extends Model
     protected $fillable = [
         'password',
         'nama',
+        'kk',
         'gender',
         'alamat',
         'ttl',
