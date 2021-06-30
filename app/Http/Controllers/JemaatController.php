@@ -29,7 +29,7 @@ class JemaatController extends Controller
 
     public function login(Request $request) {
         $nij = $request->nij;
-        $password = md5($request->password);
+        $password = $request->password;
 
         $data = Jemaat::find($nij);
         if($data->password != $password){
@@ -44,7 +44,7 @@ class JemaatController extends Controller
     }
 
     public function registrasi(Request $request) {
-        $pass = md5($request->password);
+        $pass = $request->password;
 
         $jemaat = new Jemaat([
             'password' => $pass,
