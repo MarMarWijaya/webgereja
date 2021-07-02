@@ -26,3 +26,4 @@ Route::get('getAllPengumuman', 'App\Http\Controllers\JemaatController@getAllPeng
 Route::post('getPengumumanByID', 'App\Http\Controllers\JemaatController@getPengumumanByID');
 Route::get('getAllRenungan', 'App\Http\Controllers\JemaatController@getAllRenungan');
 Route::post('getRenunganByID', 'App\Http\Controllers\JemaatController@getRenunganByID');
+Route::get('jemaatTerbaru', 'App\Http\Controllers\JemaatController@getJemaatTerbaru');

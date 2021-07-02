@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Jemaat;
 use App\Models\Pengumuman;
 use App\Models\Renungan;
+use File;
+use Storage;
+use Illuminate\Support\Facades\Mail;
 
 class JemaatController extends Controller
 {
@@ -44,31 +47,73 @@ class JemaatController extends Controller
     }
 
     public function registrasi(Request $request) {
-        $pass = $request->password;
+        try{
+            $pass = $request->password;
+            $jemaat = new Jemaat([
+                'password' => $pass,
+                'nama' => $request->nama,
+                'kk' => $request->kk,
+                'gender' => $request->gender,
+                'alamat' => $request->alamat,
+                'ttl' => $request->ttl,
+                'hp' => $request->hp,
+                'nama_ayah' => $request->ayah,
+                'nama_ibu' => $request->ibu,
+                'nama_pasangan' => $request->pasangan,
+                'gol_darah' => $request->goldar,
+                'idDesa' => $request->desa,
+                'idHome' => $request->home,
+                'idMentor' => $request->mentor
+            ]);
 
-        $jemaat = new Jemaat([
-            'password' => $pass,
-            'nama' => $request->nama,
-            'kk' => $request->kk,
-            'gender' => $request->gender,
-            'alamat' => $request->alamat,
-            'ttl' => $request->ttl,
-            'hp' => $request->hp,
-            'nama_ayah' => $request->ayah,
-            'nama_ibu' => $request->ibu,
-            'nama_pasangan' => $request->pasangan,
-            'gol_darah' => $request->goldar,
-            'idDesa' => $request->desa,
-            'idHome' => $request->home,
-            'idMentor' => $request->mentor
-        ]);
+            $jemaat->save();
 
-        $jemaat->save();
-        $respon = [
-            'status' => 'Berhasil',
-            'msg' => 'Registrasi berhasil',
-        ];
-        return $respon;
+            $jemaatTerbaru = Jemaat::latest()->first();
+            $dataJemaatTerbaru = 
+            "<?xml version='1.0' encoding='UTF-8'?>
+            <data>
+            <nij>".$jemaatTerbaru['nij']."</nij>
+            <nama>".$jemaatTerbaru['nama']."</nama>
+            <kk>".$jemaatTerbaru['kk']."</kk>
+            <gender>".$jemaatTerbaru['gender']."</gender>
+            <alamat>".$jemaatTerbaru['alamat']."</alamat>
+            <ayah>".$jemaatTerbaru['nama_ayah']."</ayah>
+            <ibu>".$jemaatTerbaru['nama_ibu']."</ibu>
+            <pasangan>".$jemaatTerbaru['nama_pasangan']."</pasangan>
+            <goldar>".$jemaatTerbaru['gol_darah']."</goldar>
+            </data>";
+            Storage::disk('local')->put('file.xml', $dataJemaatTerbaru);
+
+            $email = 'marmarwijaya7@gmail.com';
+            
+            Mail::send('templateEmail', $jemaatTerbaru->toArray(), function($mail) use($email) {
+                $mail->to($email)
+                        ->subject("Data Jemaat Terbaru");
+                $mail->from('mariowijaya31@gmail.com', 'Gerejaku');
+
+                $mail->attach(storage_path("app/file.xml"));
+            });
+    
+            // Cek kegagalan
+            if (Mail::failures()) {
+                return "Gagal mengirim Email";
+            }
+
+
+
+            $respon = [
+                'status' => 'Berhasil',
+                'msg' => 'Registrasi berhasil',
+            ];
+            return $respon;
+        }catch(Exception $e){
+            $respon = [
+                'status' => 'Gagal',
+                'msg' => 'Registrasi gagal',
+            ];
+            return $respon;
+        }
+        
     }
 
     public function getAllPengumuman(){
