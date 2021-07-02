@@ -1,9 +1,10 @@
 <header class="header" id="header">
     <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i></div>
+    <div><span style="margin-right: 10px;">Hello, Glen Wijaya</span><img class="header_img" src="https://i.imgur.com/hczKIze.jpg" alt="Image"></div>
 </header>
 <div class="l-navbar" id="nav-bar">
     <nav class="nav">
-        <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">JKI KA JEPARA</span> </a>
+        <div> <a href="#" class="nav_logo"> <img src="{{ ('logo_jki.png') }}" alt="Image" style="width: 30px;"> <span class="nav_logo-name">JKI KA JEPARA</span> </a>
             <div class="nav_list">
                 <a href="/dashboard" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a>
                 <a href="/datajemaat" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Data Jemaat</span> </a>
