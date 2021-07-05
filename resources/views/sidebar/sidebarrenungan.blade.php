@@ -1,7 +1,4 @@
-<header class="header" id="header">
-    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i></div>
-    <div><span style="margin-right: 10px;">Hello, Glen Wijaya</span><img class="header_img" src="https://i.imgur.com/hczKIze.jpg" alt="Image"></div>
-</header>
+@include('header.header')
 <div class="l-navbar" id="nav-bar">
     <nav class="nav">
         <div> <a href="#" class="nav_logo"> <img src="{{ ('logo_jki.png') }}" alt="Image" style="width: 30px;"> <span class="nav_logo-name">JKI KA JEPARA</span> </a>

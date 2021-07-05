@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Jemaat;
 use App\Models\Pengumuman;
 use App\Models\Renungan;
+use Exception;
 use File;
 use Storage;
 use Illuminate\Support\Facades\Mail;

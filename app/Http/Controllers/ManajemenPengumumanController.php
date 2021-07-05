@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pengumuman;
 use App\Models\Jemaat;
+use Exception;
 use Illuminate\Support\Facades\DB;
 
 class ManajemenPengumumanController extends Controller
