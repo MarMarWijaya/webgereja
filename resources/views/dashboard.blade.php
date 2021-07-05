@@ -56,7 +56,7 @@
                             <i class='bx bx-detail' style="font-size: 4rem;color: #00b5b8;"></i>
                         </div>
                         <div class="col-8" style="text-align: right;font-family: 'Playfair Disney';color: gray;">
-                            <h1 style="margin-bottom: -5px;color: #00b5b8;">{{ $jumlahHome }}</h1>
+                            <h1 style="margin-bottom: -5px;color: #00b5b8;">{{ $jumlahPengumuman }}</h1>
                             <h7 style="font-style:initial;">Pengumuman</h7>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                             <i class='bx bx-book-bookmark' style="font-size: 4rem;color: #ffa87d;"></i>
                         </div>
                         <div class="col-8" style="text-align: right;font-family: 'Playfair Disney';color: gray;">
-                            <h1 style="margin-bottom: -5px;color: #ffa87d;">{{ $jumlahHome }}</h1>
+                            <h1 style="margin-bottom: -5px;color: #ffa87d;">{{ $jumlahRenungan }}</h1>
                             <h7 style="font-style:initial;">Renungan</h7>
                         </div>
                     </div>

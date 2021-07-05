@@ -12,8 +12,7 @@ class DashboardController extends Controller
     public function login(Request $req)
     {
         $password = md5($req->password);
-        if($req->username == 'admin' && $password == '21232f297a57a5a743894a0e4a801fc3')
-        {
+        if ($req->username == 'admin' && $password == '21232f297a57a5a743894a0e4a801fc3') {
             return view('dashboard');
         }
     }
@@ -22,19 +21,30 @@ class DashboardController extends Controller
     {
         $jumlahJemaat = DB::table('jemaat')->count();
         $jumlahHome = DB::table('home')->count();
+        $jumlahPengumuman = DB::table('pengumuman')->count();
+        $jumlahRenungan = DB::table('renungan')->count();
         $dataTahun = DB::table('jemaat')->selectRaw('COUNT(nij) as jumlah, YEAR(created_at) as tahun')->groupby('tahun')->get();
         $array = json_decode($dataTahun, true);
-        $maxIndex = count($array)-1;
+        $maxIndex = count($array) - 1;
         $index = 0;
         $avg = 0;
-        for ($i=0; $i < 2; $i++) { 
+        for ($i = 0; $i < 2; $i++) {
             $avg += $array[$maxIndex]['jumlah'];
             $maxIndex--;
         }
 
-        $avg = $avg/2;
+        $avg = $avg / 2;
 
-
-        return view('dashboard', ['jumlahJemaat' => $jumlahJemaat, 'jumlahHome' => $jumlahHome, 'tahun' => $dataTahun, 'avg' => $avg]);
+        return view(
+            'dashboard',
+            [
+                'jumlahJemaat' => $jumlahJemaat,
+                'jumlahHome' => $jumlahHome,
+                'tahun' => $dataTahun,
+                'avg' => $avg,
+                'jumlahPengumuman' => $jumlahPengumuman,
+                'jumlahRenungan' => $jumlahRenungan
+            ]
+        );
     }
 }
