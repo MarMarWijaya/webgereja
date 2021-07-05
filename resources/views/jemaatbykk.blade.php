@@ -1,88 +1,35 @@
 <html>
     <title>W3.CSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-        margin: 0;
-        font-family: "Lato", sans-serif;
-        }
-
-        .sidebar {
-        margin: 0;
-        padding: 0;
-        width: 200px;
-        background-color: #f1f1f1;
-        position: fixed;
-        height: 100%;
-        overflow: auto;
-        }
-
-        .sidebar a {
-        display: block;
-        color: black;
-        padding: 16px;
-        text-decoration: none;
-        }
-        
-        .sidebar a.active {
-        background-color: #04AA6D;
-        color: white;
-        }
-
-        .sidebar a:hover:not(.active) {
-        background-color: #555;
-        color: white;
-        }
-
-        div.content {
-        margin-left: 200px;
-        padding: 1px 16px;
-        height: 1000px;
-        }
-
-        @media screen and (max-width: 700px) {
-        .sidebar {
-            width: 100%;
-            height: auto;
-            position: relative;
-        }
-        .sidebar a {float: left;}
-        div.content {margin-left: 0;}
-        }
-
-        @media screen and (max-width: 400px) {
-        .sidebar a {
-            text-align: center;
-            float: none;
-        }
-        }
-    </style>
+    <link rel="stylesheet" href="{{asset('sidebar.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{{asset('cardview.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <body id="body-pd">
+    <script type="text/javascript" src="{{asset('Chart.js')}}"></script>
+    </head>
+<body id="body-pd">
 
     @include('sidebar.sidebardatajemaat')
 
 <div class="content">
     <div style="margin-top: 5%"></div>
+    <div class="container">
     <center><h2>Nomor KK</h2>
     <h3>{{ $noKK }}</h3></center>
-    <table>
+    <table class="table table-striped">
         @foreach($kk as $k)
         <tr>
-            <td>Nama</td>
-            <td>:</td>
-            <td>{{ $k->nama }}</td>
+           <td>Nama</td>
+           <td>{{ $k->nama }}</td>
         </tr>
         @endforeach
     </table>
-    <br>
+    </div>
 
-    
 </div>
- 
-
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<script src="sidebar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="{{asset('sidebar.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.6/highcharts.js" charset="utf-8"></script>
 </html>
