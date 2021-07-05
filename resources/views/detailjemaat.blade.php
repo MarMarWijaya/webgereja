@@ -1,4 +1,5 @@
 <html>
+<<<<<<< HEAD
     <title>W3.CSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('sidebar.css')}}">
@@ -116,37 +117,42 @@
             <td>Gol. Darah</td>
             @if(isset($data['gol_darah']))
                 <td>{{ $data['gol_darah'] }}</td>
-            @endif
-            @if(!isset($data['gol_darah']))
+                @endif
+                @if(!isset($data['gol_darah']))
                 <td>Belum diketahui</td>
+
             @endif
         </tr>
-        <tr>
-            <td>Desa</td>
-            @if(isset($desa))
+            <tr>
+                <td>Desa</td>
+                @if(isset($desa))
                 <td>{{ $desa['Nama_Desa'] }}</td>
-            @endif
-            @if(!isset($desa))
+                @endif
+                @if(!isset($desa))
                 <td>Belum diketahui</td>
-            @endif
+
+                 @endif
         </tr>
-        <tr>
-            <td>Home</td>
-            @if(isset($home))
+      
+            <tr>
+                <td>Home</td>
+                @if(isset($home))
                 <td>{{ $home['nama_home'] }}</td>
-            @endif
-            @if(!isset($data['idHome']))
+                @endif
+                @if(!isset($data['idHome']))
                 <td>Belum diketahui</td>
+
             @endif
         </tr>
-        <tr>
-            <td>Mentor</td>
-            @if(isset($mentor))
+            <tr>
+                <td>Mentor</td>
+
+                @if(isset($mentor))
                 <td>{{ $mentor['nama'] }}</td>
-            @endif
-            @if(!isset($mentor))
+                @endif
+                @if(!isset($mentor))
                 <td>Belum diketahui</td>
-            @endif
+                @endif
         </tr>
     </table>
     <br>
