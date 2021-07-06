@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="sidebar.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 <link rel="stylesheet" href="cardview.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script type="text/javascript" src="Chart.js"></script>
 </head>
@@ -28,8 +29,8 @@
                             <i class='bx bx-id-card' style="font-size: 4rem;color: #16d39a;"></i>
                         </div>
                         <div class="col-8" style="text-align: right;font-family: 'Playfair Disney';color: gray;">
-                            <h1 style="margin-bottom: -5px;color: #16d39a;">{{ $jumlahJemaat }}</h1>
-                            <h7 style="font-style:initial;">Jumlah Jemaat</h7>
+                            <h1 style="margin-bottom: -5px;color: #16d39a; font-family: 'Montserrat', sans-serif;">{{ $jumlahJemaat }}</h1>
+                            <h7 style="font-style:initial; font-family: 'Montserrat', sans-serif;">Jumlah Jemaat</h7>
                         </div>
                     </div>
                 </div>
@@ -42,8 +43,8 @@
                             <i class='bx bx-building-house' style="font-size: 4rem;color: #ff7587;"></i>
                         </div>
                         <div class="col-8" style="text-align: right;font-family: 'Playfair Disney';color: gray;">
-                            <h1 style="margin-bottom: -5px;color: #ff7587;">{{ $jumlahHome }}</h1>
-                            <h7 style="font-style:initial;">Jumlah Home</h7>
+                            <h1 style="margin-bottom: -5px;color: #ff7587; font-family: 'Montserrat', sans-serif;">{{ $jumlahHome }}</h1>
+                            <h7 style="font-style:initial; font-family: 'Montserrat', sans-serif;">Jumlah Home</h7>
                         </div>
                     </div>
                 </div>
@@ -56,8 +57,8 @@
                             <i class='bx bx-detail' style="font-size: 4rem;color: #00b5b8;"></i>
                         </div>
                         <div class="col-8" style="text-align: right;font-family: 'Playfair Disney';color: gray;">
-                            <h1 style="margin-bottom: -5px;color: #00b5b8;">{{ $jumlahPengumuman }}</h1>
-                            <h7 style="font-style:initial;">Pengumuman</h7>
+                            <h1 style="margin-bottom: -5px;color: #00b5b8; font-family: 'Montserrat', sans-serif;">{{ $jumlahPengumuman }}</h1>
+                            <h7 style="font-style:initial; font-family: 'Montserrat', sans-serif;">Pengumuman</h7>
                         </div>
                     </div>
                 </div>
@@ -70,8 +71,8 @@
                             <i class='bx bx-book-bookmark' style="font-size: 4rem;color: #ffa87d;"></i>
                         </div>
                         <div class="col-8" style="text-align: right;font-family: 'Playfair Disney';color: gray;">
-                            <h1 style="margin-bottom: -5px;color: #ffa87d;">{{ $jumlahRenungan }}</h1>
-                            <h7 style="font-style:initial;">Renungan</h7>
+                            <h1 style="margin-bottom: -5px;color: #ffa87d; font-family: 'Montserrat', sans-serif;">{{ $jumlahRenungan }}</h1>
+                            <h7 style="font-style:initial; font-family: 'Montserrat', sans-serif;">Renungan</h7>
                         </div>
                     </div>
                 </div>

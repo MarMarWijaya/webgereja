@@ -11,7 +11,7 @@ class DashboardController extends Controller
 {
     public function login(Request $req)
     {
-        $password = md5($req->password);
+        $password = md5($req->password);              
         if ($req->username == 'admin' && $password == '21232f297a57a5a743894a0e4a801fc3') {
             return view('dashboard');
         }
