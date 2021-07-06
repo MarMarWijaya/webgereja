@@ -7,11 +7,13 @@ use PDF;
 
 class AdministrasiController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('administrasi');
     }
 
-    public function cetak(Request $req){
+    public function cetak(Request $req)
+    {
         $data = [
             'nama' => $req->nama,
             'namaBaptis' => $req->namaBaptis,
@@ -22,9 +24,10 @@ class AdministrasiController extends Controller
             'pendeta' => $req->pendeta,
             'mentor' => $req->mentor
         ];
-
-        $namafile = "Surat Baptis ".$req->nama.'.pdf';
-        $pdf = PDF::loadview('suratbaptis',['data'=>$data]);
-        return $pdf->download($namafile);
+        // $customPaper = array(0, 0, 283.80, 567.00);
+        // $namafile = "Surat Baptis " . $req->nama . '.pdf';
+        // $pdf = PDF::loadview('suratbaptis', ['data' => $data])->setPaper('a4', 'landscape');
+        // return $pdf->download($namafile);
+        return view('suratbaptis', ['data' => $data]);
     }
 }
