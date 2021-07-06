@@ -57,12 +57,15 @@
         }
         }
     </style>
+        <link rel="stylesheet" href="{{asset('sidebar.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{{asset('cardview.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <body>
 
 @include('sidebar.sidebarrenungan')
 
-<div class="content">
+<div class="content" style="margin-left: 0%;">
     <br>
     <form method='POST' action='/renungan/edit' id='formRenungan' enctype="multipart/form-data">
         @csrf
