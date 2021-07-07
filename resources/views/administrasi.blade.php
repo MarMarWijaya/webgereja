@@ -18,34 +18,17 @@
                 <input type="text" class="form-control" id="nama" name='nama'>
             </div>
             <div class="mb-3">
-                <label for="namaBaptis" class="form-label">Nama Baptis</label>
-                <input type="text" class="form-control" id="namaBaptis" name='namaBaptis'>
-            </div>
-            <div class="mb-3">
-                <label for="tanggalBaptis" class="form-label">Tanggal Baptis</label>
-                <input type="date" class="form-control" id="tanggalBaptis" name='tanggalBaptis'>
+                <label for="tempatLahir" class="form-label">Tempat Lahir</label>
+                <input type="text" class="form-control" id="tempatLahir" name='tempatLahir'>
             </div>
             <div class="mb-3">
                 <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
                 <input type="date" class="form-control" id="tanggalLahir" name='tanggalLahir'>
             </div>
             <div class="mb-3">
-                <label for="ayah" class="form-label">Nama Ayah</label>
-                <input type="text" class="form-control" id="ayah" name='ayah'>
+                <label for="tanggalBaptis" class="form-label">Tanggal Baptis</label>
+                <input type="date" class="form-control" id="tanggalBaptis" name='tanggalBaptis'>
             </div>
-            <div class="mb-3">
-                <label for="ibu" class="form-label">Nama Ibu</label>
-                <input type="text" class="form-control" id="ibu" name='ibu'>
-            </div>
-            <div class="mb-3">
-                <label for="pendeta" class="form-label">Nama Pendeta</label>
-                <input type="text" class="form-control" id="pendeta" name='pendeta'>
-            </div>
-            <div class="mb-3">
-                <label for="mentor" class="form-label">Nama Mentor</label>
-                <input type="text" class="form-control" id="mentor" name='mentor'>
-            </div>
-
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

@@ -11,142 +11,90 @@
         <div style="font-family: Tahoma;border-bottom: 1px solid black;margin-top: 2rem;">
             <b>{{ $data['nama'] }}</b>
         </div>
+        <table class="table-borderless" style="width: 100%;text-align: center;margin-top: 30px;font-family: 'Tahoma';margin-bottom: 20px;">
+            <tr>
+                <td>
+                    <i style="font-family: 'Times New Roman';text-align: left;">Lahir di</i><br>
+                </td>
+                <td width="25%" style="border-bottom: 1px solid black;"><b><?php echo $data['tempatLahir'] ?></b></td>
+                <td>
+                    <i style="font-family: 'Times New Roman';text-align: left;">Tanggal</i><br>
+                </td>
+                <td width="25%" style="border-bottom: 1px solid black;">
+                    <b><?php $date = date_create($data['tanggalLahir']);
+                        echo date_format($date, "d F Y");  ?></b>
+                </td>
+                <td>
+                    <i style="font-family: 'Times New Roman';text-align: left;">No. Induk</i><br>
+                </td>
+                <td width="25%" style="border-bottom: 1px solid black;"></td>
+            </tr>
+        </table>
 
-        <div class="row mt-3 mb-3">
-            <div class="col-1">
-                <i style="font-family: 'Times New Roman';text-align: left;">Lahir di</i><br>
-            </div>
-            <div class="col-3" style="font-family: Tahoma;border-bottom: 1px solid black;">
-                <b>Jepara</b>
-            </div>
-            <div class="col-1">
-                <i style="font-family: 'Times New Roman';text-align: left;">Tanggal</i><br>
-            </div>
-            <div class="col-3" style="font-family: Tahoma;border-bottom: 1px solid black;">
-                <b><?php $date = date_create($data['tanggalLahir']);
-                    echo date_format($date, "d F Y");  ?></b>
-            </div>
-            <div class="col-1">
-                <i style="font-family: 'Times New Roman';text-align: left;">No. Induk</i><br>
-            </div>
-            <div class="col-3" style="font-family: Tahoma;border-bottom: 1px solid black;">
-                <b></b>
-            </div>
-        </div>
+        <i style="font-family: 'Times New Roman';">Telah menerima</i><br>
+        <i style="font-family: 'Monotype Corsiva';color: #D4AF37;font-size: 40px;">Sakramen Baptisan Kudus</i>
 
-        <i style="font-family: 'Times New Roman';">Telah menerima</i>
-        <h1 style="font-family: 'Monotype Corsiva';color: #D4AF37;">Sakramen Baptisan Kudus</h1>
+        <table style="margin-top: 2rem;text-align: center;width: 100%;">
+            <tr>
+                <td style="width: 15%;"> </td>
+                <td style="width: 5%;">
+                    <i style="font-family: 'Times New Roman';text-align: left;">di JKI</i>
+                </td>
+                <td style="border-bottom: 1px solid black;width: 75%;"><b>Kerajaan Allah Jepara</b></td>
+            </tr>
+        </table>
 
-        <div class="row mt-4">
-            <div class="col-2">
-                <div style="width: 113px;height: 151px;border: 1px solid black;">Pas Foto</div>
-            </div>
-            <div class="col-10" style="font-family: Tahoma;">
+        <table style="margin-top: 1rem;text-align: center;width: 100%;">
+            <tr valign="bottom" style="padding-top: 2rem;">
+                <td style="width: 15%;"> </td>
+                <td>
+                    <i style="font-family: 'Times New Roman';text-align: left;">pada hari</i>
+                </td>
+                <td style="border-bottom: 1px solid black;width: 30%;">
+                    <b><?php $date = date_create($data['tanggalBaptis']);
+                        echo date_format($date, "l");  ?></b>
+                </td>
+                <td>
+                    <i style="font-family: 'Times New Roman';text-align: left;">tanggal</i>
+                </td>
+                <td style="border-bottom: 1px solid black;width: 40%;">
+                    <b><?php $date = date_create($data['tanggalBaptis']);
+                        echo date_format($date, "d F Y");  ?></b>
+                </td>
+            </tr>
+        </table>
 
-                <div class="row mb-3">
-                    <div class="col-1" style="text-align: left;">
-                        <i style="font-family: 'Times New Roman';text-align: left;">di JKI</i><br>
-                    </div>
-                    <div class="col-11" style="font-family: Tahoma;border-bottom: 1px solid black;">
-                        <b>Kerajaan Allah Jepara</b>
-                    </div>
-                </div>
-
-                <div class="row mb-5">
-                    <div class="col-1" style="text-align: left;">
-                        <i style="font-family: 'Times New Roman';">pada hari</i><br>
-                    </div>
-                    <div class="col-5" style="font-family: Tahoma;border-bottom: 1px solid black;">
-                        <b><?php $date = date_create($data['tanggalBaptis']);
-                            echo date_format($date, "l");  ?></b>
-                    </div>
-                    <div class="col-1">
-                        <i style="font-family: 'Times New Roman';text-align: left;">tanggal</i><br>
-                    </div>
-                    <div class="col-5" style="font-family: Tahoma;border-bottom: 1px solid black;">
-                        <b><?php $date = date_create($data['tanggalBaptis']);
-                            echo date_format($date, "d F Y");  ?></b>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-2" style="font-family: Tahoma;"></div>
-                    <div class="col-2" style="font-family: Tahoma;border-bottom: 1px solid black;">
-                        <b>{{ $data['nama'] }}</b>
-                    </div>
-                    <div class="col-2" style="font-family: Tahoma;"></div>
-                    <div class="col-2" style="font-family: Tahoma;border-bottom: 1px solid black;">
-                        <b>Ps. Feriyadi NC</b>
-                    </div>
-                    <div class="col-2" style="font-family: Tahoma;"></div>
-                    <div class="col-2" style="font-family: Tahoma;border-bottom: 1px solid black;">
-                        <b>Ps. Daud K</b>
-                    </div>
-
-                    <div class="col-2" style="font-family: Tahoma;"></div>
-                    <div class="col-2" style="font-family: Tahoma;">
-                        <i>Yang Dibaptis</i>
-                    </div>
-                    <div class="col-2" style="font-family: Tahoma;"></div>
-                    <div class="col-2" style="font-family: Tahoma;">
-                        <i>Gembala Jemaat</i>
-                    </div>
-                    <div class="col-2" style="font-family: Tahoma;"></div>
-                    <div class="col-2" style="font-family: Tahoma;">
-                        <i>Majelis Gereja</i>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <table style="width: 100%;margin-top: 6rem;text-align: center;">
+            <tr valign="bottom">
+                <td style="width: 15%;"> </td>
+                <td style="width: 22%;border-bottom: 1px solid black;">
+                    <b>{{ $data['nama'] }}</b>
+                </td>
+                <td style="width: 5%;"> </td>
+                <td style="width: 22%;border-bottom: 1px solid black;">
+                    <b>Ps. Ferryadi NC</b>
+                </td>
+                <td style="width: 5%;"> </td>
+                <td style="width: 22%;border-bottom: 1px solid black;">
+                    <b>Pnt. Daud K</b>
+                </td>
+            </tr>
+            <tr style="padding-top: 2rem;" valign="top">
+                <td style="width: 15%;"> </td>
+                <td style="width: 22%;">
+                    <i style="font-size: 14px;">Yang Dibaptis</i>
+                </td>
+                <td style="width: 5%;"> </td>
+                <td style="width: 22%;">
+                    <i style="font-size: 14px;">Gembala Jemaat</i>
+                </td>
+                <td style="width: 5%;"> </td>
+                <td style="width: 22%;">
+                    <i style="font-size: 14px;">Majelis Gereja</i>
+                </td>
+            </tr>
+        </table>
     </div>
-    <!-- 
-    <table class="table table-hover">
-        <tr>
-            <td>Nama</td>
-            <td>:</td>
-            <td>{{ $data['nama'] }}</td>
-        </tr>
-        <tr>
-            <td>Nama Baptis</td>
-            <td>:</td>
-            <td><?php echo $data['namaBaptis'] ?></td>
-        </tr>
-        <tr>
-            <td>Tanggal Baptis</td>
-            <td>:</td>
-            <td><?php $date = date_create($data['tanggalBaptis']);
-                echo date_format($date, "D, d M Y");  ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Tanggal Lahir</td>
-            <td>:</td>
-            <td><?php $date = date_create($data['tanggalLahir']);
-                echo date_format($date, "D, d M Y");  ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Ayah</td>
-            <td>:</td>
-            <td><?php echo $data['ayah'] ?></td>
-        </tr>
-        <tr>
-            <td>Ibu</td>
-            <td>:</td>
-            <td><?php echo $data['ibu'] ?></td>
-        </tr>
-        <tr>
-            <td>Pendeta</td>
-            <td>:</td>
-            <td><?php echo $data['pendeta'] ?></td>
-        </tr>
-        <tr>
-            <td>Mentor</td>
-            <td>:</td>
-            <td><?php echo $data['mentor'] ?></td>
-        </tr>
-
-    </table> -->
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
