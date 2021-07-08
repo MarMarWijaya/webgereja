@@ -100,11 +100,12 @@ class JemaatController extends Controller
                 return "Gagal mengirim Email";
             }
 
-
+            $nijTerbaru = $jemaatTerbaru['nij'];
 
             $respon = [
                 'status' => 'Berhasil',
                 'msg' => 'Registrasi berhasil',
+                'nij' => $nijTerbaru,
             ];
             return $respon;
         }catch(Exception $e){
