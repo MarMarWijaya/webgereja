@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Home;
-
+use Illuminate\Support\Facades\DB;
 class ManajemenHomeController extends Controller
 {
     public function index(){
-        $data = Home::all();
+        $data = DB::table('home')->paginate(10);
         return view('manajemenhome', ['data' => $data]);
     }
 

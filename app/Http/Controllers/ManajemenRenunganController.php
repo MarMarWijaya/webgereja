@@ -13,25 +13,37 @@ class ManajemenRenunganController extends Controller
     public function index(){
         // $data = Renungan::all();
         $data = Renungan::join('jemaat', 'renungan.nij', '=', 'jemaat.nij')
-               ->get(['renungan.*', 'jemaat.nama']);
+               ->select(['renungan.*', 'jemaat.nama'])
+               ->paginate(10);
         $penulis = Jemaat::all();
         return view('manajemenrenungan', ['data' => $data, 'penulis' => $penulis]);
     }
 
     public function tambah(Request $req){
         try{
-            $image = $req->file('lampiran');
+            if($req->file('lampiran') != null){
+                $image = $req->file('lampiran');
 
-            $new_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('lampiran'), $new_name);
+                $new_name = rand() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('lampiran'), $new_name);
 
-            Renungan::create([
-                'lampiran' => $new_name,
-                'judul' => $req->judul,
-                'isi' => $req->isi,
-                'nij' => $req->penulis
-            ]);
-            return redirect('/renungan');
+                Renungan::create([
+                    'lampiran' => $new_name,
+                    'judul' => $req->judul,
+                    'isi' => $req->isi,
+                    'nij' => $req->penulis
+                ]);
+                return redirect('/renungan');
+            }
+            else{
+                Renungan::create([
+                    'judul' => $req->judul,
+                    'isi' => $req->isi,
+                    'nij' => $req->penulis
+                ]);
+                return redirect('/renungan');
+            }
+            
         }
         catch(Exception $e){
             

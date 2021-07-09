@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class ManajemenJemaatController extends Controller
 {
     public function index(){
-        $data = Jemaat::all();
+        $data = DB::table('jemaat')->paginate(5);
         $dataHome = Home::all();
         $dataDesa = Desa::all();
         return view('manajemenjemaat', ['data' => $data, 'dataHome' => $dataHome, 'dataDesa' => $dataDesa]);

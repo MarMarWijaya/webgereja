@@ -12,7 +12,8 @@ class ManajemenPengumumanController extends Controller
 {
     public function index(){
         $data = Pengumuman::join('jemaat', 'pengumuman.nij', '=', 'jemaat.nij')
-               ->get(['pengumuman.*', 'jemaat.nama']);
+               ->select(['pengumuman.*', 'jemaat.nama'])
+               ->paginate(10);
         $penulis = Jemaat::all();
         return view('manajemenpengumuman', ['data' => $data, 'penulis' => $penulis]);
     }
